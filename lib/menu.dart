@@ -8,12 +8,12 @@ class MyHomePage extends StatelessWidget {
   final String kelas = "PBP D";
 
   final List<ItemHomepage> items = [
-    ItemHomepage("Lihat Proyek", Icons.folder),
-    ItemHomepage("Tambah Proyek", Icons.add_circle),
-    ItemHomepage("Login", Icons.login),
-    ItemHomepage("Lihat Experience", Icons.work_history),
-    ItemHomepage("Tambah Experience", Icons.add_circle),
-    ItemHomepage("Logout", Icons.logout),
+    ItemHomepage("Lihat Proyek", Icons.folder, Colors.indigo),
+    ItemHomepage("Tambah Proyek", Icons.add_circle, Colors.teal),
+    ItemHomepage("Login", Icons.login, Colors.deepOrange),
+    ItemHomepage("Lihat Experience", Icons.work_history, Colors.indigo),
+    ItemHomepage("Tambah Experience", Icons.add_circle, Colors.teal),
+    ItemHomepage("Logout", Icons.logout, Colors.deepOrange),
   ];
 
   @override
@@ -102,8 +102,9 @@ class InfoCard extends StatelessWidget {
 class ItemHomepage {
   final String name;
   final IconData icon;
+  final Color backgroundColor;
 
-  ItemHomepage(this.name, this.icon);
+  ItemHomepage(this.name, this.icon, this.backgroundColor);
 }
 
 class ItemCard extends StatelessWidget {
