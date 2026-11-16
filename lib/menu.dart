@@ -114,13 +114,8 @@ class ItemCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Material(
-<<<<<<< HEAD
-      // Menggunakan warna sekunder dari skema tema aplikasi.
-      color: Theme.of(context).colorScheme.secondary,
-=======
       // Menggunakan warna dari backgroundColor item.
       color: item.backgroundColor,
->>>>>>> 4b92df6 (feat(menu): membuat halaman menjadi scrollable dan tidak ada pixel out of range)
       borderRadius: BorderRadius.circular(12),
       child: InkWell(
         // Aksi ketika kartu ditekan oleh pengguna.
