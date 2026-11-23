@@ -50,3 +50,19 @@ AI Disclosure
 Gen AI yang digunakan adalah chatgpt luna 6 medium. Startegi prompting adalah dari awal mencantumkan tutorial dn tugas sepenuhnya agar ai dpat memahami konteks secara akurat. Kemudian saya akan mengerjakan codenya sendiri terlebih dahulu dan menanyakan AI apakah sudah sesuai dengan checklist. Pada tugas ini AI mempunyai 3 peran, yaitu mereview ulang checklist, mengatasi pixel out of bound, dan git flow saat perubahan di main dan branch berbeda tetapi sudah di commit. Pada masalah pixel, AI mensugesti halaman view dapat di scroll dan memberikan codenya secara langsung.
 
 AI chat: [text](https://chatgpt.com/s/cx_6afb28e710788191bcaa32ef4913961e)
+
+
+### Tugas 8
+1. Navigator.push() -> seperti stack, membuka halaman baru di atas halaman sekarang
+Navigator.pushReplacement() -> menghapus halaman terlebih dahulu kemudian baru membuka halaman baru
+Navigator.pop() ->  menutup halaman paling atas kemudian memunculkan halaman sebelumnya
+Metode untuk membuka formulir dari kartu aksi -> push()
+Opsi Home di drawer membawa pengguna kembali ke halaman utama dengan cara memakai pushReplacement(). Dimana saat user memilih Home di drawer, Navigator.pushReplacement() mengganti halaman formulir dan  membuka page main. 
+
+2. Scaffold untuk frame halaman, seperti area untuk AppBar, isi halaman, dan drawer. Dengan susunan ini di beberapa halaman dapat menjaga layoutnya agar konsisten. Seperti pda AppBar yang memakai warna indigo di halaman utama dan formulir.
+
+3. Padding memberi jarak di sekitar input agar formulir lebih mudah dibaca. SingleChildScrollView agar user dapat mengscroll halaman saat widget tidak muat di layar.
+
+4. GlobalKey<FormState> memberi akses ke status formulir. Setiap validator memeriksa nilai kolom, lalu validate() mengecek saat tombol save ditekan. Contohnya, URL thumbnail abc ditolak karena bukan URL http atau https yang valid. Memilih jenis kolom atau papan ketik yang sesuai membantu pengguna memasukkan data, tetapi tidak memastikan nilainya valid, recheck dengan logika lain tetap diperlukan.
+
+AI Disclosure: Tidak memakai AI untuk tugas ini
