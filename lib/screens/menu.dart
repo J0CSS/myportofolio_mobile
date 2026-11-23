@@ -1,6 +1,8 @@
 import 'package:material_ui/material_ui.dart';
 import 'package:myportofolio_mobile/widgets/left_drawer.dart';
 import 'package:myportofolio_mobile/widgets/project_card.dart';
+import 'package:myportofolio_mobile/widgets/experience_card.dart';
+
 
 class MyHomePage extends StatelessWidget {
   MyHomePage({super.key});
@@ -63,7 +65,12 @@ class MyHomePage extends StatelessWidget {
             padding: const EdgeInsets.all(20),
             crossAxisSpacing: 10,
             mainAxisSpacing: 10,
-            children: items.map((item) => ItemCard(item)).toList(),
+            children: items.map((item) {
+              if (item.name == "Tambah Experience") {
+                return ExperienceItemCard(item);
+              }
+              return ProjectItemCard(item);
+            }).toList(),
           ),
         ],
       ),
