@@ -2,6 +2,8 @@ import 'package:material_ui/material_ui.dart';
 import 'package:myportofolio_mobile/widgets/left_drawer.dart';
 import 'package:myportofolio_mobile/widgets/project_card.dart';
 import 'package:myportofolio_mobile/widgets/experience_card.dart';
+import 'package:myportofolio_mobile/services/auth_state.dart';
+import 'package:provider/provider.dart';
 
 
 class MyHomePage extends StatelessWidget {
@@ -22,6 +24,8 @@ class MyHomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isLoggedIn = context.watch<AuthState>().isLoggedIn;
+
     // Scaffold menyediakan struktur visual dasar halaman (AppBar, Body, SnackBar).
     return Scaffold(
       // AppBar menampilkan bar bagian atas halaman aplikasi.
@@ -65,7 +69,11 @@ class MyHomePage extends StatelessWidget {
             padding: const EdgeInsets.all(20),
             crossAxisSpacing: 10,
             mainAxisSpacing: 10,
-            children: items.map((item) {
+            children: items.where((item) {
+              if (item.name == "Login") return !isLoggedIn;
+              if (item.name == "Logout") return isLoggedIn;
+              return true;
+            }).map((item) {
               if (item.name == "Tambah Experience") {
                 return ExperienceItemCard(item);
               }
