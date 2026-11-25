@@ -23,7 +23,7 @@ class _LoginScreenState extends State<LoginScreen> {
     setState(() {
       _isSubmitting = true;
     });
-    
+
     try {
       await context.read<AuthState>().login(_username, _password);
       if (!mounted) return;
@@ -33,9 +33,7 @@ class _LoginScreenState extends State<LoginScreen> {
       ScaffoldMessenger.of(context)
         ..hideCurrentSnackBar()
         ..showSnackBar(
-          SnackBar(
-            content: Text('Login failed (HTTP ${error.statusCode}).'),
-          ),
+          SnackBar(content: Text('Login failed (HTTP ${error.statusCode}).')),
         );
     } finally {
       if (mounted) {

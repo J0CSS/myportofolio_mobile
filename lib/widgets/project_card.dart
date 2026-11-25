@@ -34,21 +34,16 @@ class ProjectItemCard extends StatelessWidget {
             if (!context.mounted || !allowed) return;
             Navigator.push(
               context,
-              MaterialPageRoute<void>(
-                builder: (_) => const ProjectFormPage(),
-              ),
+              MaterialPageRoute<void>(builder: (_) => const ProjectFormPage()),
             );
           } else if (item.name == "Login") {
             final loggedIn = await Navigator.push<bool>(
               context,
-              MaterialPageRoute<bool>(
-                builder: (_) => const LoginScreen(),
-              ),
+              MaterialPageRoute<bool>(builder: (_) => const LoginScreen()),
             );
             if (context.mounted && loggedIn == true) {
-              ScaffoldMessenger.of(context).showSnackBar(
-                const SnackBar(content: Text('Logged in.')),
-              );
+              ScaffoldMessenger.of(context)
+                  .showSnackBar(const SnackBar(content: Text('Logged in.')));
             }
           } else if (item.name == "Logout") {
             final messenger = ScaffoldMessenger.of(context);
@@ -80,11 +75,7 @@ class ProjectItemCard extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Icon(
-                  item.icon,
-                  color: Colors.white,
-                  size: 30.0,
-                ),
+                Icon(item.icon, color: Colors.white, size: 30.0),
                 const Padding(padding: EdgeInsets.all(3)),
                 Text(
                   item.name,

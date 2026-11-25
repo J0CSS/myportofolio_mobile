@@ -79,9 +79,7 @@ class _ProjectListScreenState extends State<ProjectListScreen> {
                     constraints: BoxConstraints(
                       minHeight: constraints.maxHeight,
                     ),
-                    child: const Center(
-                      child: Text('No projects found.'),
-                    ),
+                    child: const Center(child: Text('No projects found.')),
                   ),
                 ),
               ),
@@ -127,8 +125,7 @@ class _ProjectListScreenState extends State<ProjectListScreen> {
                       Navigator.push(
                         context,
                         MaterialPageRoute<void>(
-                          builder: (_) =>
-                              ProjectDetailScreen(project: project),
+                          builder: (_) => ProjectDetailScreen(project: project),
                         ),
                       );
                     },

@@ -5,7 +5,6 @@ import 'package:myportofolio_mobile/widgets/experience_card.dart';
 import 'package:myportofolio_mobile/services/auth_state.dart';
 import 'package:provider/provider.dart';
 
-
 class MyHomePage extends StatelessWidget {
   MyHomePage({super.key});
 
@@ -32,13 +31,10 @@ class MyHomePage extends StatelessWidget {
       appBar: AppBar(
         title: const Text(
           'MyPortfolio',
-          style: TextStyle(
-            color: Colors.white,
-            fontWeight: FontWeight.bold,
-          ),
+          style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
         ),
         backgroundColor: Theme.of(context).colorScheme.primary,
-        iconTheme: const IconThemeData(color: Colors.white)
+        iconTheme: const IconThemeData(color: Colors.white),
       ),
       drawer: const LeftDrawer(),
       // Body halaman utama dengan padding di sekelilingnya.
@@ -69,16 +65,19 @@ class MyHomePage extends StatelessWidget {
             padding: const EdgeInsets.all(20),
             crossAxisSpacing: 10,
             mainAxisSpacing: 10,
-            children: items.where((item) {
-              if (item.name == "Login") return !isLoggedIn;
-              if (item.name == "Logout") return isLoggedIn;
-              return true;
-            }).map((item) {
-              if (item.name == "Tambah Experience") {
-                return ExperienceItemCard(item);
-              }
-              return ProjectItemCard(item);
-            }).toList(),
+            children: items
+                .where((item) {
+                  if (item.name == "Login") return !isLoggedIn;
+                  if (item.name == "Logout") return isLoggedIn;
+                  return true;
+                })
+                .map((item) {
+                  if (item.name == "Tambah Experience") {
+                    return ExperienceItemCard(item);
+                  }
+                  return ProjectItemCard(item);
+                })
+                .toList(),
           ),
         ],
       ),
@@ -105,10 +104,7 @@ class InfoCard extends StatelessWidget {
         // Menyusun teks title dan content secara vertikal.
         child: Column(
           children: [
-            Text(
-              title,
-              style: const TextStyle(fontWeight: FontWeight.bold),
-            ),
+            Text(title, style: const TextStyle(fontWeight: FontWeight.bold)),
             const SizedBox(height: 8.0),
             Text(content),
           ],

@@ -84,10 +84,7 @@ class _ProjectFormPageState extends State<ProjectFormPage> {
       );
 
       try {
-        final created = await apiClient.createProject(
-              newProject,
-              token: token,
-            );
+        final created = await apiClient.createProject(newProject, token: token);
         if (!mounted) return;
 
         await showDialog<void>(
