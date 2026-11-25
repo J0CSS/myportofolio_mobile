@@ -20,17 +20,17 @@ class ExperienceItemCard extends StatelessWidget {
           ScaffoldMessenger.of(context)
             ..hideCurrentSnackBar()
             ..showSnackBar(
-              SnackBar(content: Text("Kamu telah menekan tombol ${item.name}!"))
+              SnackBar(
+                content: Text("Kamu telah menekan tombol ${item.name}!"),
+              ),
             );
 
           // Navigate ke halaman yang sesuai
           if (item.name == "Tambah Experience") {
             Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => ExperienceFormPage(),
-                ),
-              );
+              context,
+              MaterialPageRoute(builder: (context) => ExperienceFormPage()),
+            );
           }
         },
         child: Container(
@@ -39,11 +39,7 @@ class ExperienceItemCard extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Icon(
-                  item.icon,
-                  color: Colors.white,
-                  size: 30.0,
-                ),
+                Icon(item.icon, color: Colors.white, size: 30.0),
                 const Padding(padding: EdgeInsets.all(3)),
                 Text(
                   item.name,
